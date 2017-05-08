@@ -1,12 +1,19 @@
 class ArticlesController < ApplicationController
   def index
+    @articles = Article.all
   end
 
   def show
   end
 
   def create
-    render plain: params.inspect
+    @article = Article.new(article_params)
+    if @article.save
+      # redirect_back_or @article
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
 
   def new
@@ -18,4 +25,9 @@ class ArticlesController < ApplicationController
 
   def destory
   end
+
+  private 
+    def article_params
+        params.require(:article).permit(:title,:content)
+    end  
 end
