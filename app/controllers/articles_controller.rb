@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.all.reverse
   end
 
   def show
@@ -26,8 +26,8 @@ class ArticlesController < ApplicationController
   def destory
   end
 
-  private 
+  private
     def article_params
         params.require(:article).permit(:title,:content)
-    end  
+    end
 end
