@@ -1,13 +1,18 @@
 
-        <div>
-    <span class="date">
-        <span class="month"> Apr </span>
-        <span class="day"> 14 </span>
-    </span>
-            <a href="/2017/express-middleware/">Express Middleware</a>
-        </div>
+<% @articles.each do |article| %>
+    <% date =  %>
+    <div>
+        <span class="date" id="date">
+            <span class="year"> <%= article.created_at.year %> </span>
+            <span class="month"> <%= monthToEnglisg(article.created_at.month) %> </span>
+            <span class="day"> <%= article.created_at.day %> </span>
+        </span>
+            <!-- <a href="/2017/express-middleware/">Express Middleware</a> -->
+        <%= link_to article.title %>
+    </div>
+<% end -%>
 
-
+<!-- 
 
 
         <div>
@@ -1494,4 +1499,4 @@
         <span class="day"> 14 </span>
     </span>
             <a href="/2014/good-old-things/">Good old things</a>
-        </div>
+        </div> -->

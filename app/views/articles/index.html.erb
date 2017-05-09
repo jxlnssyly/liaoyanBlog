@@ -1,14 +1,12 @@
-
-
-
-
 <div class="banner">
-    <div id="maintao-logo">LiaoYan</div>
+    <div id="maintao-logo">Ly</div>
 </div>
 
 <div class="posts-wrapper">
     <div class="posts">
-       <%= render 'heading', @articles%>
+        <% if !@articles.blank? %>
+            <%= render 'heading'%>
+       <% end -%>
     </div>
 
 </div>
