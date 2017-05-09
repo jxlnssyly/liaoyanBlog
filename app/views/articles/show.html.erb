@@ -1,2 +1,15 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<article class="post">
+	<h1 class="title"><%= @article.title %></h1>
+	<div class="date" >
+		<%= @article.created_at.year.to_s + '-' + @article.created_at.month.to_s + '-' + @article.created_at.day.to_s %>
+	</div>
+	<div class="simditor border_none" id="show">
+		<div class="simditor-body content" id="show_content">
+			<%= simple_format(@article.content) %>
+		</div>
+		<%= link_to "回到首页", root_path %>
+	</div>
+</article>
+
+
+
