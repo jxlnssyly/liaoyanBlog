@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :signed_in_user, only: [:edit, :update,:destroy]
+
+  before_action :signed_in_user, only: [:new, :edit, :update,:destroy]
+
   def index
     @articles = Article.all.reverse
   end
