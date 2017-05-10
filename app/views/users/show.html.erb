@@ -4,6 +4,8 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <%= link_to "登出", signout_path,method: :delete, data: { confirm: "确定登出吗?"} %>
+        	<%= link_to "回到首页", root_path, class: "back_home" %>
       </h1>
     </section>
   </aside>

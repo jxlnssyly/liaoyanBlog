@@ -3,11 +3,12 @@
 	<div class="date" >
 		<%= @article.created_at.year.to_s + '-' + @article.created_at.month.to_s + '-' + @article.created_at.day.to_s %>
 	</div>
+	<%= link_to "回到首页", root_path, class: "back_home" %>
+
 	<div class="simditor border_none" id="show">
 		<div class="simditor-body content" id="show_content">
 			<%= simple_format(@article.content) %>
 		</div>
-		<%= link_to "回到首页", root_path, class: "back_home" %>
 	</div>
 </article>
 

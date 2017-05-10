@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :signed_in_user, only: [:edit, :update,:destroy]
   def index
     @articles = Article.all.reverse
   end
@@ -41,5 +42,8 @@ class ArticlesController < ApplicationController
   private
     def article_params
         params.require(:article).permit(:title,:content)
+    end
+    def signed_in_user
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
     end
 end

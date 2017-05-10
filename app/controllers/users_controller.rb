@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    before_action :show_current_user, only: [:show]
+
   def new
   	@user = User.new
   end
@@ -6,7 +8,8 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
-  		flash[:success] = "注册成功!"
+      sign_in @user
+  		flash.now[:success] = "注册成功!"
   		redirect_to @user
   	else
   		render 'new'
@@ -20,4 +23,11 @@ class UsersController < ApplicationController
 	  def user_params
 	    params.require(:user).permit(:name, :email, :password,:password_confirmation)
 	  end
+
+    def show_current_user
+      user = User.find(params[:id])
+      redirect_to user_path(current_user), notice: "不能查看其他人的信息." unless current_user?(user)
+
+    end
+
 end
