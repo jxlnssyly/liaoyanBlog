@@ -1,2 +1,27 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<div class="crate_article">
+	<div class="markdown">
+		<%= form_for @article  do |f| %>
+			<%= f.text_field :title, "type"=> "text", "placeholder" => "无文章标题", "class" => "title_field"  %>
+			<%= f.text_area :content,  "rows" => "10",:type=> 'hidden',"id" => "article_content" %>
+			<%= f.submit "提交", class: "btn" %>
+		<% end -%>
+	</div>
+	<div class="simditor" id="show">
+		<div class="simditor-body content">
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<script type="text/javascript">
+	$(function() {
+		var editor = new Simditor({ textarea: $('#article_content'), toolbar: ['title', 'bold', 'italic', 'underline', 'color', 'ol', 'ul', 'blockquote', 'code', 'link','image','hr'], placeholder: '这里输入文字...', pasteImage: true, fileKey: 'file', upload: { url: '/photos', params: null, connectionCount: 3, leaveConfirm: 'Uploading is in progress, are you sure to leave this page?' }});
+
+		$(document).bind('input propertychange',function(){
+	        var text = $(".simditor-body").html();
+	        $(".content").html(text);
+	        $('.simditor-body').scrollTop( $('.simditor-body')[1].scrollHeight);
+		});
+      });
+</script>
+

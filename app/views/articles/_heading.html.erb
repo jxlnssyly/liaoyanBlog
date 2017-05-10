@@ -1,6 +1,4 @@
-
 <% @articles.each do |article| %>
-    <% date =  %>
     <div>
         <span class="date" id="date">
             <span class="year"> <%= article.created_at.year %> </span>
@@ -8,7 +6,9 @@
             <span class="day"> <%= article.created_at.day %> </span>
         </span>
             <!-- <a href="/2017/express-middleware/">Express Middleware</a> -->
-        <%= link_to article.title, article %>
+        <%= link_to article.title, article %> 
+        <%= link_to "编辑",edit_article_path(article) %>
+        <%= link_to "删除", article_path(article),method: :delete, data: { confirm: "确定删除这条博客吗?"} %>
     </div>
 <% end -%>
 
