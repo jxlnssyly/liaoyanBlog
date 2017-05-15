@@ -26,7 +26,12 @@ class UsersController < ApplicationController
 
     def show_current_user
       user = User.find(params[:id])
-      redirect_to user_path(current_user), notice: "不能查看其他人的信息." unless current_user?(user)
+      if current_user.nil?
+        flash[:error] = "请先登录";
+        redirect_to signin_path
+      else
+        redirect_to user_path(current_user), notice: "不能查看其他人的信息." unless current_user?(user)
+      end
 
     end
 
