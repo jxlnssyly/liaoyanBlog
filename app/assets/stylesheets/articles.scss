@@ -116,4 +116,34 @@ img {
   height: 40px;
 }
 
+.backtop {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-color: rgb(212,212,212);
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  line-height:30px;
+  text-decoration: none;
+  color: rgb(38,38,38);
+}
+
+.backtop:hover {
+  color: rgb(38,38,38);
+  text-decoration: none;
+}
+
+.backtop i {
+  width: 20px;
+  height: 21px;
+  font-size: 20px;
+  padding-top: 16px;
+  display: block;
+  font-style: italic;
+  font-weight: 400!important;
+}
+
 
