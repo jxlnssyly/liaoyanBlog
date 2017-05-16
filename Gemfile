@@ -22,7 +22,7 @@ gem 'maruku'
 gem 'jquery-rails'
 gem 'simditor'
 gem 'bcrypt-ruby', '3.1.2'
-
+gem 'pg'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
