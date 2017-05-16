@@ -1,6 +1,6 @@
 body {
   font-family: Helvetica, Tahoma, Arial, "Microsoft YaHei", "寰蒋闆呴粦", SimSun, "瀹嬩綋", STXihei, "鍗庢枃缁嗛粦", Heiti, "榛戜綋", sans-serif;
-  font-size: 1em;
+  font-size: 1.5em;
   padding: 0;
   margin: 0;
 }
@@ -207,4 +207,7 @@ split {
 
 article #show {
   padding-bottom: 30px;
+}
+a:hover {
+    color: #4183c4;
 }
