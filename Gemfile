@@ -21,7 +21,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'maruku'
 gem 'jquery-rails'
 gem 'simditor'
-gem 'pg'
 gem 'bcrypt-ruby', '3.1.2'
 
 # Use CoffeeScript for .coffee assets and views
