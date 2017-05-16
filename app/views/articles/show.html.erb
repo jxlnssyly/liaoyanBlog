@@ -4,6 +4,10 @@
 		<%= @article.created_at.year.to_s + '-' + @article.created_at.month.to_s + '-' + @article.created_at.day.to_s %>
 	</div>
 	<%= link_to "回到首页", root_path, class: "back_home" %>
+	<% if signed_in? %>
+    <%= link_to "编辑",edit_article_path(@article) %>
+    <%= link_to "删除", article_path(@article),method: :delete, data: { confirm: "确定删除这条博客吗?"} %>
+  <% end -%>
 	<a class="backtop" id="backtop">返回<br />顶部</a>
 	<div class="simditor border_none" id="show">
 		<div class="simditor-body content" id="show_content">
