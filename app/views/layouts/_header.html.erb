@@ -1,0 +1,7 @@
+<% if signed_in? %>
+	<div class="header">
+		<%= link_to current_user.name,user_path(current_user) %>
+    	<%= link_to "登出", signout_path(current_user),method: :delete, data: { confirm: "确定登出吗?"} %>
+	</div>
+    
+<% end -%>
