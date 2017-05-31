@@ -92,6 +92,7 @@ img {
   height: 360px;
   width: 528px;
   overflow:auto;
+
 }
 
 .simditor .simditor-mac {
@@ -118,7 +119,7 @@ img {
 
 .backtop {
   position: fixed;
-  bottom: 100px;
+  bottom: 190px;
   right: 30px;
   width: 60px;
   height: 60px;
@@ -150,6 +151,10 @@ img {
   float: right;
   padding-right: 30px;
   padding-top: 22px;
+}
+
+.cl {
+  clear: both;
 }
 
 
