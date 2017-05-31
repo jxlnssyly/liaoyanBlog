@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
+  get 'secrets/index'
+
+  get 'secrets/create'
+
+  get 'secrets/new'
+
+  get 'secrets/edit'
+
+  get 'secrets/update'
+
+  get 'secrets/destroy'
+
   get 'users/new'
+  
+  post 'photos' => 'photos#upload'
+
+  match '', to: 'secrets#index', constraints: lambda { |r| r.subdomain.present? && r.subdomain != 'www'}, via: 'get'
 
   root to: 'articles#index'
   resources :users
@@ -10,10 +26,12 @@ Rails.application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
   # 配置二级域名 secret.localhost:3000.com
-  constraints :subdomain => Rails.configuration.secret_subdomain do
-  	scope module: 'secret', as: 'sescet' do
-  		resources :articles
-  	end
+  constraints :subdomain => Rails.configuration.mobile_subdomain do
+    resources :secrets
+  end
+  constraints :subdomain => Rails.configuration.main_subdomain do
+    resources :secrets
+    # 下面是其他路由，比如
   end
 
 end

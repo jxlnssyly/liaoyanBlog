@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    gon.content = @article.content
   end
 
   def create
@@ -45,7 +46,5 @@ class ArticlesController < ApplicationController
     def article_params
         params.require(:article).permit(:title,:content)
     end
-    def signed_in_user
-      redirect_to signin_url, notice: "Please sign in." unless signed_in?
-    end
+    
 end

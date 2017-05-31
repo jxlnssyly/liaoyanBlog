@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.1.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -20,7 +21,12 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'maruku'
 gem 'jquery-rails'
+
 gem 'simditor'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'gon'
+
 gem 'bcrypt-ruby', '3.1.2'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
