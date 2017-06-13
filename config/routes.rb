@@ -26,12 +26,12 @@ Rails.application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
   # 配置二级域名 secret.localhost:3000.com
-  constraints :subdomain => Rails.configuration.mobile_subdomain do
-    resources :secrets
-  end
-  constraints :subdomain => Rails.configuration.main_subdomain do
+  #constraints :subdomain => Rails.configuration.mobile_subdomain do
+  #  resources :secrets
+ # end
+#  constraints :subdomain => Rails.configuration.main_subdomain do
     resources :secrets
     # 下面是其他路由，比如
-  end
+ # end
 
 end
