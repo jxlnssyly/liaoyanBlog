@@ -1,18 +1,16 @@
-<div class="container">
-    <div class="banner">
-        <div id="maintao-logo">Ly</div>
-    </div>
-
-    <div class="posts-wrapper">
-        <div class="posts">
-            <% if !@articles.blank? %>
-                <%= render 'heading'%>
-           <% end -%>
-        </div>
-
-    </div>
-    <div class="cl"></div>
+<div class="banner">
+    <div id="maintao-logo">Ly</div>
 </div>
+
+<div class="posts-wrapper">
+    <div class="posts">
+        <% if !@articles.blank? %>
+            <%= render 'heading'%>
+       <% end -%>
+    </div>
+
+</div>
+<div class="cl"></div>
 
 <script>
     var shine = new Shine(document.getElementById('maintao-logo'));
