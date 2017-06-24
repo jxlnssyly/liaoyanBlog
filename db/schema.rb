@@ -31,12 +31,6 @@ ActiveRecord::Schema.define(version: 20170622073937) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "english", id: false, force: :cascade do |t|
-    t.integer "id"
-    t.text "eng"
-    t.text "chinese"
-  end
-
   create_table "photos", force: :cascade do |t|
     t.string "image"
     t.datetime "created_at", null: false
