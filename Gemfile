@@ -12,6 +12,7 @@ gem 'rails', '~> 5.1.0'
 gem 'sqlite3'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'pg'
+gem 'will_paginate', '~> 3.1.0'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'

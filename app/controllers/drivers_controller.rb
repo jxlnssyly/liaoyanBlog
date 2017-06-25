@@ -1,6 +1,7 @@
 class DriversController < ApplicationController
   def depart
-  	@drivers = Driver.limit(8)
+  	@drivers = Driver.all.paginate(page: params[:page])
+
   end
 
   def more()
