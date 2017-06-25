@@ -6,12 +6,12 @@ import datetime
 
 headers = {'User-Agent':'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'}
 
-conn = psycopg2.connect(database="article", user="username", password="123456", host="127.0.0.1", port="5432")
+conn = psycopg2.connect(database="blog_production", user="postgres", password="abc123", host="127.0.0.1", port="5432")
 cur = conn.cursor()
 
 def downLoad():
-    for i in range(1,83):
-        url = 'http://www.dbmeinv.com/dbgroup/show.htm?cid=7&pager_offset=' + str(i)
+    for i in range(1,151):
+        url = 'http://www.dbmeinv.com/dbgroup/show.htm?cid=6&pager_offset=' + str(i)
         request = urllib2.Request(url,headers=headers)
         response = urllib2.urlopen(request)
         soup = BeautifulSoup(response.read())
