@@ -3,7 +3,10 @@ class ArticlesController < ApplicationController
   before_action :signed_in_user, only: [:new, :edit, :update,:destroy]
 
   def index
-    @articles = Article.all.reverse
+    # @articles = Article.paginate(page: params[:page])
+    @articles = Article.all.order("created_at DESC").paginate(page:params[:page],per_page:8)
+
+
   end
 
   def show

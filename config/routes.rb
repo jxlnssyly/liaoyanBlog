@@ -24,11 +24,11 @@ Rails.application.routes.draw do
   resources :users
   resources :articles
   resources :sessions, only: [:new, :create, :destroy]
-  match '/fache', to: 'drivers#depart', via: 'get'
+  match '/fache', to: 'drivers#depart', via: 'get'# 老司机
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via: 'get'
   match '/signout', to: 'sessions#destroy', via: 'delete'
-
+  match '/data', to: 'drivers#dataAnalysis', via: 'get' # 数据分析
   # 配置二级域名 secret.localhost:3000.com
   #constraints :subdomain => Rails.configuration.mobile_subdomain do
   #  resources :secrets
